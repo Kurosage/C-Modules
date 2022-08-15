@@ -13,6 +13,7 @@
 #ifndef FIXED_H
 #define FIXED_H
 #include <iostream>
+#include <cmath>
 
 class Fixed{
     private:
@@ -20,10 +21,15 @@ class Fixed{
         static const int bits = 8;
     public:
         Fixed();
+        Fixed(int const int_t);
+        Fixed(float const float_t);
         ~Fixed();
         Fixed (const Fixed &a);
         Fixed & operator = (const Fixed &a);
         int getRawBits(void) const;
         void setRawBits(int const raw);
+        int toInt(void) const;
+        float toFloat(void) const;
 };
+std::ostream & operator << (std::ostream &os, Fixed const &a);
 #endif
