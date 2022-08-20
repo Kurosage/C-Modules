@@ -6,7 +6,7 @@
 /*   By: rmaren <rmaren@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 21:26:26 by rmaren            #+#    #+#             */
-/*   Updated: 2022/08/15 22:25:39 by rmaren           ###   ########.fr       */
+/*   Updated: 2022/08/20 15:10:57 by rmaren           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,12 +91,12 @@ Fixed & Fixed::operator -- (void){
     this->point -=1;
     return (*this);
 }
-Fixed Fixed::operator ++ (int n){
+Fixed Fixed::operator ++ (int){
     Fixed fix = *this;
     (this->point) += 1;
     return (fix);
 }
-Fixed Fixed::operator -- (int n){
+Fixed Fixed::operator -- (int){
     Fixed fix = *this;
     (this->point) -= 1;
     return (fix);
