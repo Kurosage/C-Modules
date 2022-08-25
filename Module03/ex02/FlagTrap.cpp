@@ -6,7 +6,7 @@
 /*   By: rmaren <rmaren@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 16:58:47 by rmaren            #+#    #+#             */
-/*   Updated: 2022/08/25 17:34:40 by rmaren           ###   ########.fr       */
+/*   Updated: 2022/08/25 17:55:14 by rmaren           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,9 @@ FlagTrap::FlagTrap(std::string name): ClapTrap(name){
     this->dmg = 30;
     this->hit_p = 100;
     this->energy_p = 100;
-    this->guardStatus = false;
     std::cout << "FlagTrap Default Constructor called\n";
 }
 FlagTrap::FlagTrap(const FlagTrap &a): ClapTrap(a){
-    this->guardStatus = a.guardStatus;
     std::cout << "FlagTrap Copy Constructor called\n";
 }
 

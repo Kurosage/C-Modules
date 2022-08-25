@@ -6,7 +6,7 @@
 /*   By: rmaren <rmaren@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 16:58:42 by rmaren            #+#    #+#             */
-/*   Updated: 2022/08/25 17:32:48 by rmaren           ###   ########.fr       */
+/*   Updated: 2022/08/25 17:55:05 by rmaren           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@
 #include <string>
 #include "ClapTrap.hpp"
 class FlagTrap: public ClapTrap{
-    private:
-        bool guardStatus;
     public:
         FlagTrap(std::string name);
         virtual ~FlagTrap();
