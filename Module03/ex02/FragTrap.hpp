@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FlagTrap.hpp                                       :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmaren <rmaren@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 16:58:42 by rmaren            #+#    #+#             */
-/*   Updated: 2022/08/25 17:55:05 by rmaren           ###   ########.fr       */
+/*   Updated: 2022/08/25 18:31:54 by rmaren           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FLAGTRAP_H
-#define FLAGTRAP_H
+#ifndef FRAGTRAP_H
+#define FRAGTRAP_H
 #include <iostream>
 #include <string>
 #include "ClapTrap.hpp"
-class FlagTrap: public ClapTrap{
+class FragTrap: public ClapTrap{
     public:
-        FlagTrap(std::string name);
-        virtual ~FlagTrap();
-        FlagTrap(const  FlagTrap &a);
-        FlagTrap &operator = (const FlagTrap &a);
+        FragTrap(std::string name);
+        virtual ~FragTrap();
+        FragTrap(const  FragTrap &a);
+        FragTrap &operator = (const FragTrap &a);
 
         void highFivesGuys(void);
         void attack(const std::string& target);

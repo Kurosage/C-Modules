@@ -6,7 +6,7 @@
 /*   By: rmaren <rmaren@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 22:02:26 by rmaren            #+#    #+#             */
-/*   Updated: 2022/08/25 18:09:42 by rmaren           ###   ########.fr       */
+/*   Updated: 2022/08/25 18:31:41 by rmaren           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,9 +65,9 @@ int main( void ) {
    svar1.guardGate();
    std::cout << svar1.getName() << " :: " << svar1.getHit_p() << " :: " << svar1.getEnergy_p() << " :: " << svar1.getDmg() << " :: " << svar1.getGuardstatus()<<"\n" ;
    
-   FlagTrap svar11 = FlagTrap("Andy");
+   FragTrap svar11 = FragTrap("Andy");
    std::cout << svar11.getName() << " :: " << svar11.getHit_p() << " :: " << svar11.getEnergy_p() << " :: " << svar11.getDmg() << " :: " << "\n" ;
-   FlagTrap svar22 = FlagTrap("Tom");
+   FragTrap svar22 = FragTrap("Tom");
    std::cout << svar22.getName() << " :: " << svar22.getHit_p() << " :: " << svar22.getEnergy_p() << " :: " << svar22.getDmg() << " :: " << "\n";
    svar22.attack("Andy");
    std::cout << svar22.getName() << " :: " << svar22.getHit_p() << " :: " << svar22.getEnergy_p() << " :: " << svar22.getDmg() << " :: " << "\n";
