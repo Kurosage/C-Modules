@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FlagTrap.cpp                                       :+:      :+:    :+:   */
+/*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmaren <rmaren@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 16:58:47 by rmaren            #+#    #+#             */
-/*   Updated: 2022/08/25 17:55:14 by rmaren           ###   ########.fr       */
+/*   Updated: 2022/08/25 18:11:18 by rmaren           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FlagTrap.hpp"
+#include "FragTrap.hpp"
 FlagTrap::FlagTrap(std::string name): ClapTrap(name){
     this->dmg = 30;
     this->hit_p = 100;
@@ -39,7 +39,7 @@ FlagTrap &FlagTrap::operator=(const FlagTrap &a)
 void FlagTrap::attack(const std::string& target){
     if (this->energy_p > 0 && this->hit_p > 0){
         this->energy_p--;
-        std::cout << "ScavTrap \x1B[1;31m" <<this->name <<" \033[0mattacks \x1B[1;36m" << target << "\033[0m" <<
+        std::cout << "FlagTrap \x1B[1;31m" <<this->name <<" \033[0mattacks \x1B[1;36m" << target << "\033[0m" <<
         ", causing \033[1;31;21m" << this->dmg << "\033[0m points of damage!\n";
     }
     else {

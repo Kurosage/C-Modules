@@ -6,13 +6,13 @@
 /*   By: rmaren <rmaren@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 22:02:26 by rmaren            #+#    #+#             */
-/*   Updated: 2022/08/25 17:32:23 by rmaren           ###   ########.fr       */
+/*   Updated: 2022/08/25 18:09:42 by rmaren           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
-#include "FlagTrap.hpp"
+#include "FragTrap.hpp"
 int main( void ) {
    
    ClapTrap var1 = ClapTrap("Lili");
