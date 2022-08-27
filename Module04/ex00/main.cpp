@@ -6,7 +6,7 @@
 /*   By: rmaren <rmaren@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 22:02:26 by rmaren            #+#    #+#             */
-/*   Updated: 2022/08/27 22:36:32 by rmaren           ###   ########.fr       */
+/*   Updated: 2022/08/27 22:41:15 by rmaren           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,11 @@ int main()
    std::cout << wrongcat->getType() << " " << std::endl;
    wrongcat->makeSound();
    wrongan->makeSound();
+
+   delete meta;
+   delete j;
+   delete i;
+   delete wrongan;
+   delete wrongcat;
    return 0;
 }
