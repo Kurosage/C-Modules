@@ -6,7 +6,7 @@
 /*   By: rmaren <rmaren@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/27 22:53:36 by rmaren            #+#    #+#             */
-/*   Updated: 2022/08/27 23:20:44 by rmaren           ###   ########.fr       */
+/*   Updated: 2022/08/28 18:02:35 by rmaren           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ class Brain{
     public:
         Brain();
         ~Brain();
-        Brain(const  Brain &a);
+        Brain(Brain &a);
         Brain &operator = (const Brain &a);
-        std::string *getIdeas() const;
+        std::string *getIdeas();
 };
 #endif

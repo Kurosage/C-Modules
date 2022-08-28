@@ -1,12 +1,12 @@
-NAME = Polimorphism
+NAME = ex01
 
 CC = c++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongCat.cpp WrongAnimal.cpp
+SRCS = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongCat.cpp WrongAnimal.cpp Brain.cpp
 
-INCS_DIR = Animal.hpp Cat.hpp Dog.hpp WrongCat.hpp WrongAnimal.hpp
+INCS_DIR = Animal.hpp Cat.hpp Dog.hpp WrongCat.hpp WrongAnimal.hpp Brain.hpp
 
 OBJS = $(SRCS:.cpp=.o)
 
