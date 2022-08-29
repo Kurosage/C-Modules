@@ -6,7 +6,7 @@
 /*   By: rmaren <rmaren@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/27 20:53:59 by rmaren            #+#    #+#             */
-/*   Updated: 2022/08/28 18:59:39 by rmaren           ###   ########.fr       */
+/*   Updated: 2022/08/29 21:38:50 by rmaren           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class AAnimal{
         AAnimal(const  AAnimal &a);
         AAnimal &operator = (const AAnimal &a);
         virtual std::string getType() const;
-        virtual void makeSound() const;
+        virtual void makeSound() const = 0;
 
 };
 #endif

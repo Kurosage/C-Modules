@@ -6,7 +6,7 @@
 /*   By: rmaren <rmaren@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/27 20:53:56 by rmaren            #+#    #+#             */
-/*   Updated: 2022/08/28 19:00:06 by rmaren           ###   ########.fr       */
+/*   Updated: 2022/08/29 21:41:25 by rmaren           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,4 @@ AAnimal &AAnimal::operator = (const AAnimal &a){
 
 std::string AAnimal::getType() const{
             return this->type;
-}
-void AAnimal::makeSound() const{
-    std::cout << "What kind of animal says something\n";
 }
