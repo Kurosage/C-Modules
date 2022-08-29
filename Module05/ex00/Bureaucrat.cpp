@@ -6,7 +6,7 @@
 /*   By: rmaren <rmaren@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 19:09:26 by rmaren            #+#    #+#             */
-/*   Updated: 2022/08/29 22:09:13 by rmaren           ###   ########.fr       */
+/*   Updated: 2022/08/29 22:32:29 by rmaren           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Bureaucrat::Bureaucrat(std::string name, int grade){
     this->name = name;
-    if (grade < 0){
+    if (grade < 1){
         throw Bureaucrat::GradeTooHighException();
     }
     else if (grade > 150){
