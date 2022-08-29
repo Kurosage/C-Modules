@@ -6,7 +6,7 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS = main.cpp Bureaucrat.cpp Form.cpp
 
-INCS_DIR = Animal.hpp Bureaucrat.hpp Form.hpp
+INCS_DIR = Bureaucrat.hpp Form.hpp
 
 OBJS = $(SRCS:.cpp=.o)
 
