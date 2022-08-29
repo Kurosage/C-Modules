@@ -6,7 +6,7 @@
 /*   By: rmaren <rmaren@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 19:09:23 by rmaren            #+#    #+#             */
-/*   Updated: 2022/08/29 22:05:46 by rmaren           ###   ########.fr       */
+/*   Updated: 2022/08/29 22:18:10 by rmaren           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Bureaucrat{
         int grade;
     public:
         Bureaucrat(std::string name, int grade);
-        virtual ~Bureaucrat();
+        ~Bureaucrat();
         Bureaucrat(const  Bureaucrat &a);
         Bureaucrat &operator = (const Bureaucrat &a);
         std::string getName() const;
