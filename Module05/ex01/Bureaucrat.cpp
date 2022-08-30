@@ -6,7 +6,7 @@
 /*   By: rmaren <rmaren@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 19:09:26 by rmaren            #+#    #+#             */
-/*   Updated: 2022/08/29 23:37:43 by rmaren           ###   ########.fr       */
+/*   Updated: 2022/08/30 16:42:04 by rmaren           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,12 +70,12 @@ void Bureaucrat::decrementGrade()
 
 const char* Bureaucrat::GradeTooLowException::what() const throw()
 {
-	return ("You can't decrement grade \n");
+	return ("\x1B[1;31mYou can't decrement grade \n\033[0m\n");
 }
 
 const char* Bureaucrat::GradeTooHighException::what() const throw()
 {
-	return ("You can't increment grade\n");
+	return ("\x1B[1;32mYou can't increment grade\n\033[0m\n");
 }
 
 std::ostream & operator <<( std::ostream &o, Bureaucrat const &a)
