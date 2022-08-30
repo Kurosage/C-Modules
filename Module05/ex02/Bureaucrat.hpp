@@ -6,7 +6,7 @@
 /*   By: rmaren <rmaren@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 19:09:23 by rmaren            #+#    #+#             */
-/*   Updated: 2022/08/29 23:52:31 by rmaren           ###   ########.fr       */
+/*   Updated: 2022/08/30 16:37:17 by rmaren           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ class Bureaucrat{
             virtual const char *what() const throw();
         };
         void signForm(Form &ref);
+        void executeForm(Form const & form);
 };
 
 std::ostream	&operator<<(std::ostream &o, Bureaucrat const  &a);

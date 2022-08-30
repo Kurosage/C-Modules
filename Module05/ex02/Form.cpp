@@ -6,7 +6,7 @@
 /*   By: rmaren <rmaren@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 22:12:47 by rmaren            #+#    #+#             */
-/*   Updated: 2022/08/29 23:59:44 by rmaren           ###   ########.fr       */
+/*   Updated: 2022/08/30 16:43:29 by rmaren           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,13 +64,19 @@ int Form::getExecuteGrade() const{
 
 const char* Form::GradeTooLowException::what() const throw()
 {
-	return ("You can't decrement grade \n");
+	return ("\x1B[1;31mYou can't decrement grade \n\033[0m\n");
 }
 
 const char* Form::GradeTooHighException::what() const throw()
 {
-	return ("You can't increment grade\n");
+	return ("\x1B[1;32mYou can't increment grade\n\033[0m\n");
 }
+
+const char* Form::FormWasNotSignedException::what() const throw()
+{
+	return ("\x1B[1;33mForm wasnt signed\n\033[0m\n");
+}
+
 
 std::ostream & operator << ( std::ostream &o, Form const &a)
 {
