@@ -6,7 +6,7 @@
 /*   By: rmaren <rmaren@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 22:12:50 by rmaren            #+#    #+#             */
-/*   Updated: 2022/08/30 16:14:26 by rmaren           ###   ########.fr       */
+/*   Updated: 2022/08/31 16:37:19 by rmaren           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,19 +39,19 @@ class Form{
         void setName(std::string name);
         class GradeTooLowException : public std::exception
         {
-        public:
-            virtual const char *what() const throw();
+            public:
+                virtual const char *what() const throw();
         };
 
         class GradeTooHighException : public std::exception
         {
-        public:
-            virtual const char *what() const throw();
+            public:
+                virtual const char *what() const throw();
         };
         class FormWasNotSignedException : public std::exception
 		{
 			public:
-				virtual const char* what() const throw();
+				virtual const char *what() const throw();
 		};
 
         virtual void execute(Bureaucrat const & executor) const = 0;

@@ -6,7 +6,7 @@
 /*   By: rmaren <rmaren@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 22:12:47 by rmaren            #+#    #+#             */
-/*   Updated: 2022/08/30 16:43:29 by rmaren           ###   ########.fr       */
+/*   Updated: 2022/08/31 16:35:32 by rmaren           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,7 @@ std::ostream & operator << ( std::ostream &o, Form const &a)
 void Form::beSigned(Bureaucrat &bur){
     if (bur.getGrade() > this->signGrade){
         throw Form::GradeTooLowException();
+        return ;
     }
     else{
         this->sign = true;
