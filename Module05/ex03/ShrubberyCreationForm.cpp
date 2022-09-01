@@ -6,7 +6,7 @@
 /*   By: rmaren <rmaren@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 00:04:58 by rmaren            #+#    #+#             */
-/*   Updated: 2022/08/30 19:11:10 by rmaren           ###   ########.fr       */
+/*   Updated: 2022/09/01 16:15:45 by rmaren           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,13 +61,13 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 "_rr__eeeeeeeeeeee_rrT__rr__eeeeEET__EEEr__T____rrT\n"
 "__ EEEr_____T_rrT______rr___rr_____rrT_________T\n"
 "____________rrT__rr_____T___rrT_eeeeeeeeErT___rr\n"
-"___eeeeeeeeeeeeEEErT_rr_rr_eeeeeeeeeeeeeeeeEErrT\n"
-"__ T_____EEErT___rrT_rr__EEEr___rrT________rrT\n"
-"__ rr____rr_______rr_rr___EEEr_EEErT_____rrT\n"
-"__ T_____T___T_rrT_T_rr___rr_rrT__rrT____rr\n"
-"__ rr_______EEEr__rr______ T________eeeeEE\n"
-"___T__eeeeEET_____T___rrT__T__________rrT\n"
-"___eeeeEErrT_____rr__EEErT_rr\n"
+"T__TeeeeeeeeeeeEEErT_rr_rr_eeeeeeeeeeeeeeeeEErrT\n"
+"T_ T_____EEErT___rrT_rr__EEEr___rrT________rrT\n"
+"T_ rr____rr_______rr_rr___EEEr_EEErT_____rrT\n"
+"TTT_____T___T_rrT_T_rr___rr_rrT__rrT____rr\n"
+"TT rr_______EEEr__rr______ T________eeeeEE\n"
+"__TT__eeeeEET_____T___rrT__T__________rrT\n"
+"___TeeeEErrT_____rr__EEErT_rr\n"
 "________________rr___EEEr___rr\n"
 "_______________rr____EEEr___rr\n"
 "____________EEEr_____rr_____rr\n"
@@ -80,18 +80,18 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 "__ eeeeeeeeeeeerr_eeeeEE____EEErT_rrT\n";
 
 
-	if (this->getSign() == false)
-		throw (Form::FormWasNotSignedException());
+	if (this->getSigned() == false)
+		throw (Form::UnsignedFormException());
 	else if (executor.getGrade() > this->getExecuteGrade())
 		throw (Form::GradeTooLowException());
 	else
 	{
-		std::ofstream	fout(this->target);
-		if (!fout.is_open())
+		std::ofstream	ofs(this->target);
+		if (!ofs.is_open())
 		{
-			std::cout << "Cant open file\n";
+			std::cout << "Coulnd't open the output file\n";
 			return ;
 		}
-		fout << tree;
+		ofs << tree;
 	}
 }

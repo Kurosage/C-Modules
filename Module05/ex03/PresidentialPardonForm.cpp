@@ -6,7 +6,7 @@
 /*   By: rmaren <rmaren@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 00:06:00 by rmaren            #+#    #+#             */
-/*   Updated: 2022/08/30 18:22:34 by rmaren           ###   ########.fr       */
+/*   Updated: 2022/09/01 16:13:10 by rmaren           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,21 @@
 
 PresidentialPardonForm::PresidentialPardonForm(std::string target) : Form("Presidential Pardon Form", 25, 5){
 	this->target = target;
-	std::cout << "Presidential Pardon Form" << *this << " has beed constructed\n";
+	std::cout << "Presidential Pardon Form ShrubberyCreationForm default constructor called\n";
 }
 
 PresidentialPardonForm::~PresidentialPardonForm(){
-	std::cout << "Presidential Pardon destructor called\n";
+	std::cout << "Presidential Pardon Form destructor called\n";
 }
 
 PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const &a) : Form(a.getName(), a.getSignGrade(), a.getExecuteGrade()){
 	this->target = a.getTarget();
-	std::cout << "Presidential Pardon copy constructor called\n";
+	std::cout << "Presidential Pardon Form copy constructor called\n";
 }
 
 PresidentialPardonForm &PresidentialPardonForm::operator = (PresidentialPardonForm const &a){
 	this->target = a.getTarget();
-	std::cout << "Presidential Pardon copy assignment operator called\n";
+	std::cout << "Presidential Pardon Form copy assignment operator called\n";
 	return (*this);
 }
 
@@ -39,10 +39,11 @@ std::string	PresidentialPardonForm::getTarget( void ) const{
 
 void PresidentialPardonForm::execute(Bureaucrat const & executor) const
 {
-	if (this->getSign() == false)
-		throw (Form::FormWasNotSignedException());
+	if (this->getSigned() == false)
+		throw (Form::UnsignedFormException());
 	else if (executor.getGrade() > this->getExecuteGrade())
 		throw (Form::GradeTooLowException());
 	else
-		std::cout << this->target << " has been pardoned by Zaphod Beeblebrox\n";
+		std::cout << this->target << " was pardonned by Zafod Beeblebrox\n";
+		
 }
