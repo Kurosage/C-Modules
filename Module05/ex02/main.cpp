@@ -6,7 +6,7 @@
 /*   By: rmaren <rmaren@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 22:02:26 by rmaren            #+#    #+#             */
-/*   Updated: 2022/09/01 16:17:08 by rmaren           ###   ########.fr       */
+/*   Updated: 2022/09/01 16:23:12 by rmaren           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,5 @@ int main()
 	bur2.executeForm(rrf);
 	bur3.executeForm(scf);
 
-	prf.execute(bur1);
 
 }

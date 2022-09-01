@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmaren <rmaren@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/29 22:12:50 by rmaren            #+#    #+#             */
-/*   Updated: 2022/09/01 15:51:06 by rmaren           ###   ########.fr       */
+/*   Created: 2022/09/01 16:51:51 by rmaren            #+#    #+#             */
+/*   Updated: 2022/09/01 16:52:08 by rmaren           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,23 +19,19 @@
 class Bureaucrat;
 
 class Form
-{	
-    private:
-		const std::string	name;
-		const int			signGrade;
-		const int			executeGrade;
-		bool				signStatus;
+{
 	public:
+		Form();
 		virtual ~Form();
-		Form(std::string name, int signGrade, int executeGrade);
-		Form(Form const &a);
-		Form & operator=(Form const &a);
+		Form(std::string name, int grade_to_sign, int grade_to_execute);
+		Form(Form const & ref);
+		Form & operator=(Form const & ref);
 
 		const std::string	getName( void ) const;
-		int					getSignGrade( void ) const;
-		int					getExecuteGrade( void ) const;
+		int					getGradeToSign( void ) const;
+		int					getGradeToExecute( void ) const;
 		bool				getSigned( void ) const;
-
+		void				setSigned( const bool new_value);
 		class Exception : public std::exception
 		{
 			public:
@@ -59,9 +55,14 @@ class Form
 			public:
 				virtual const char* what() const throw();
 		};
-
-		void	beSigned(Bureaucrat & ref);
+		void	be_signed(Bureaucrat & ref);
 		virtual void execute(Bureaucrat const & executor) const = 0;
+
+	private:
+		const std::string	_name;
+		const int			_grade_to_sign;
+		const int			_grade_to_execute;
+		bool				_signed;
 };
 
 std::ostream & operator<<( std::ostream & o, Form const & rhs);

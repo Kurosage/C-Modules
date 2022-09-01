@@ -1,41 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
+/*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmaren <rmaren@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/01 16:54:32 by rmaren            #+#    #+#             */
-/*   Updated: 2022/09/01 16:54:39 by rmaren           ###   ########.fr       */
+/*   Created: 2022/09/01 16:52:39 by rmaren            #+#    #+#             */
+/*   Updated: 2022/09/01 16:52:48 by rmaren           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef INTERN_HPP
+# define INTERN_HPP
 
-#ifndef ROBOTOMYREQUESTFORM_HPP
-# define ROBOTOMYREQUESTFORM_HPP
-
+#include <iostream>
 #include "Form.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 class Form;
 
-class RobotomyRequestForm : public Form
+class Intern
 {
 	public:
-		RobotomyRequestForm();
-		RobotomyRequestForm(std::string target);
-		~RobotomyRequestForm();
-		RobotomyRequestForm(RobotomyRequestForm const & ref);
-		RobotomyRequestForm & operator=(RobotomyRequestForm const & ref);
-		
-		std::string	getTarget( void ) const;
-		void execute(Bureaucrat const & executor) const;
-		class FailureException : public Form::Exception
+
+		Intern();
+		~Intern();
+		Intern(Intern const & ref);
+		Intern & operator=(Intern const & ref);
+		Form *makeForm(std::string form_name, std::string form_target);
+
+		class Exception : public std::exception
 		{
 			public:
 				virtual const char* what() const throw();
 		};
-	private:
-		std::string	_target;
 };
 
 #endif

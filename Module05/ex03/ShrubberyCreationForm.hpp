@@ -5,28 +5,33 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmaren <rmaren@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/30 00:04:51 by rmaren            #+#    #+#             */
-/*   Updated: 2022/08/31 17:09:35 by rmaren           ###   ########.fr       */
+/*   Created: 2022/09/01 16:55:14 by rmaren            #+#    #+#             */
+/*   Updated: 2022/09/01 16:55:14 by rmaren           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #ifndef SHRUBBERYCREATIONFORM_HPP
 # define SHRUBBERYCREATIONFORM_HPP
+
 #include "Form.hpp"
 
 class Form;
 
 class ShrubberyCreationForm : public Form
-{	
-    private:
-		std::string	target;
+{
 	public:
+		ShrubberyCreationForm();
 		ShrubberyCreationForm(std::string target);
 		~ShrubberyCreationForm();
-		ShrubberyCreationForm(ShrubberyCreationForm const &a);
-		ShrubberyCreationForm &operator = (ShrubberyCreationForm const &a);
+		ShrubberyCreationForm(ShrubberyCreationForm const & ref);
+		ShrubberyCreationForm & operator=(ShrubberyCreationForm const & ref);
+		
 		std::string	getTarget( void ) const;
+		
 		void execute(Bureaucrat const & executor) const;
+	private:
+		std::string	_target;
 };
 
 #endif
