@@ -6,7 +6,7 @@
 /*   By: rmaren <rmaren@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 00:05:32 by rmaren            #+#    #+#             */
-/*   Updated: 2022/08/30 18:58:36 by rmaren           ###   ########.fr       */
+/*   Updated: 2022/09/01 16:14:26 by rmaren           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,18 +50,16 @@ const char* RobotomyRequestForm::RobotomyFailed::what() const throw()
 
 void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
-	if (this->getSign() == false)
-		throw (Form::FormWasNotSignedException());
+	if (this->getSigned() == false)
+		throw (Form::UnsignedFormException());
 	else if (executor.getGrade() > this->getExecuteGrade())
 		throw (Form::GradeTooLowException());	
-	else{
-		std::cout << "----Makes some drilling noises----\n";
-        int robotomy = std::rand() % 2;
-        if (robotomy == 1)
-        {
-            std::cout << this->target << " has been robotomized successfully\n";
-        }
-        else
-            throw (RobotomyRequestForm::RobotomyFailed());
-    }
+	int success = std::rand() % 2; // Random number between 0 and 1
+	std::cout << "< intensive drilling noises >\n";
+	if (success == 1)
+	{
+		std::cout << this->target << " has been robotomized" << std::endl;
+	}
+	else
+		throw (RobotomyRequestForm::RobotomyFailed());
 }

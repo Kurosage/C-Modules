@@ -6,7 +6,7 @@
 /*   By: rmaren <rmaren@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 00:04:58 by rmaren            #+#    #+#             */
-/*   Updated: 2022/08/31 14:56:08 by rmaren           ###   ########.fr       */
+/*   Updated: 2022/09/01 16:15:45 by rmaren           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,18 +80,18 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 "__ eeeeeeeeeeeerr_eeeeEE____EEErT_rrT\n";
 
 
-	if (this->getSign() == false)
-		throw (Form::FormWasNotSignedException());
+	if (this->getSigned() == false)
+		throw (Form::UnsignedFormException());
 	else if (executor.getGrade() > this->getExecuteGrade())
 		throw (Form::GradeTooLowException());
 	else
 	{
-		std::ofstream	fout(this->target);
-		if (!fout.is_open())
+		std::ofstream	ofs(this->target);
+		if (!ofs.is_open())
 		{
-			std::cout << "Cant open file\n";
+			std::cout << "Coulnd't open the output file\n";
 			return ;
 		}
-		fout << tree;
+		ofs << tree;
 	}
 }
