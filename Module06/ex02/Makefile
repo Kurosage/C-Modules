@@ -1,12 +1,12 @@
-NAME = SerDser
+NAME = BaseABCD
 
 CC = c++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = main.cpp Serilization.cpp
+SRCS = main.cpp Base.cpp
 
-INCS_DIR = Serilization.hpp
+INCS_DIR = Base.hpp A.hpp B.hpp C.hpp
 
 OBJS = $(SRCS:.cpp=.o)
 
