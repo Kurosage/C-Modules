@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   MutantStack.hpp                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rmaren <rmaren@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/20 15:25:53 by rmaren            #+#    #+#             */
+/*   Updated: 2022/09/20 15:29:58 by rmaren           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef MUTANTSTACK_HPP
 #define MUTANTSTACK_HPP
 #include <algorithm>
@@ -17,6 +29,7 @@ class MutantStack : public std::stack<T>
         }
 
         MutantStack(const stack &a): stack(){
+            (void)a;
         }
 
         ~MutantStack(){}

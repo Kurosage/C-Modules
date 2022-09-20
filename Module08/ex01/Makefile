@@ -1,12 +1,11 @@
-NAME = easyfind
-
+NAME = Span
 CC = c++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = main.cpp 
+SRCS = main.cpp Span.cpp
 
-INCS_DIR = easyfind.hpp
+INCS_DIR = Span.hpp
 
 OBJS = $(SRCS:.cpp=.o)
 
